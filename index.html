@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skyfellow Initiative | Connecting Global Platforms with Emerging Technology Ecosystems</title>
+<meta name="description" content="Skyfellow Initiative is an independent business development initiative connecting global platforms with emerging technology ecosystems, with an initial focus on Japan-based startups, IPO-near companies, VC networks, mobility, supply chain, and industrial technology domains." />
+<meta property="og:title" content="Skyfellow Initiative | Connecting Global Platforms with Emerging Technology Ecosystems" />
+<meta property="og:description" content="Skyfellow Initiative is an independent business development initiative connecting global platforms with emerging technology ecosystems, with an initial focus on Japan-based startups, IPO-near companies, VC networks, mobility, supply chain, and industrial technology domains." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="skyfellow-ogp.jpeg" />
+<style>
+/* ─── Reset ──────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#0B1F3A;
+  --navy-deep:#071527;
+  --navy-mid:#132d52;
+  --charcoal:#1F2937;
+  --slate:#4B5563;
+  --mist:#94a3b8;
+  --silver-blue:#CBD5E1;
+  --pale-sky:#E0F2FE;
+  --soft-gray:#F5F7FA;
+  --white:#FFFFFF;
+  --sky:#38BDF8;
+  --sky-dark:#0ea5e9;
+  --shadow-sm:0 2px 8px rgba(11,31,58,.08);
+  --shadow-md:0 6px 24px rgba(11,31,58,.11);
+  --shadow-lg:0 16px 48px rgba(11,31,58,.16);
+  --r-sm:6px;
+  --r-md:12px;
+  --r-lg:20px;
+  --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:.22s ease
+}
+
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--soft-gray);color:var(--charcoal);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* ─── Language ────────────────────────────────────────────── */
+body.lang-en .jp{display:none!important}
+body.lang-jp .en{display:none!important}
+span.en,span.jp{display:inline}
+body.lang-en span.jp{display:none!important}
+body.lang-jp span.en{display:none!important}
+
+/* ─── Util ────────────────────────────────────────────────── */
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sky);margin-bottom:10px}
+.sec-title{font-size:clamp(1.5rem,2.8vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.25;margin-bottom:18px}
+.sec-intro{font-size:1.02rem;color:var(--slate);max-width:700px;line-height:1.8}
+.bar{width:38px;height:3px;background:var(--sky);border-radius:2px;margin-bottom:28px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;padding:13px 26px;border-radius:var(--r-sm);font-size:.88rem;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:all var(--ease);border:none;text-decoration:none;white-space:nowrap}
+.btn-primary{background:var(--sky);color:var(--navy-deep)}
+.btn-primary:hover{background:var(--sky-dark);box-shadow:0 4px 20px rgba(56,189,248,.35);transform:translateY(-1px);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(203,213,225,.45)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--sky);color:var(--sky);text-decoration:none}
+
+/* ─── Header ──────────────────────────────────────────────── */
+header{position:sticky;top:0;z-index:200;background:rgba(7,21,39,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(56,189,248,.1)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.logo{font-size:.93rem;font-weight:700;letter-spacing:.07em;color:var(--white);white-space:nowrap;flex-shrink:0}
+.logo-sky{color:var(--sky)}
+nav{display:flex;align-items:center;gap:2px}
+.nav-a{font-size:.8rem;font-weight:500;color:var(--silver-blue);padding:6px 10px;border-radius:var(--r-sm);letter-spacing:.02em;transition:color var(--ease),background var(--ease);white-space:nowrap}
+.nav-a:hover{color:var(--white);background:rgba(255,255,255,.06);text-decoration:none}
+.lang-tgl{display:flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(203,213,225,.18);border-radius:20px;padding:3px;gap:2px;margin-left:10px;flex-shrink:0}
+.lbtn{padding:5px 13px;border-radius:16px;font-size:.75rem;font-weight:600;letter-spacing:.06em;cursor:pointer;border:none;background:transparent;color:var(--silver-blue);transition:all var(--ease)}
+.lbtn.act{background:var(--sky);color:var(--navy-deep)}
+.lbtn:hover:not(.act){color:var(--white)}
+.ham{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.ham span{display:block;width:22px;height:2px;background:var(--silver-blue);border-radius:2px}
+.mob-nav{display:none;flex-direction:column;background:rgba(7,21,39,.99);border-top:1px solid rgba(56,189,248,.08);padding:16px 28px 20px;gap:4px}
+.mob-nav.open{display:flex}
+.mob-nav a{font-size:.88rem;font-weight:500;color:var(--silver-blue);padding:10px 0;border-bottom:1px solid rgba(203,213,225,.08)}
+.mob-lang{display:flex;gap:8px;padding-top:14px}
+
+/* ─── Hero ────────────────────────────────────────────────── */
+#hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
+.h-bg{position:absolute;inset:0;background:url('skyfellow-hero-bg.jpeg') center/cover no-repeat}
+.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,21,39,.93) 0%,rgba(11,31,58,.87) 50%,rgba(7,21,39,.82) 100%)}
+.h-ov::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--sky),transparent);opacity:.35}
+.h-ct{position:relative;z-index:2;padding:100px 0 80px;max-width:800px}
+.h-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,.11);border:1px solid rgba(56,189,248,.22);border-radius:20px;padding:6px 14px;font-size:.71rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:28px}
+.h-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sky);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.h-title{font-size:clamp(2.3rem,6vw,4rem);font-weight:800;color:var(--white);letter-spacing:-.03em;line-height:1.1;margin-bottom:22px}
+.h-sub{font-size:clamp(.95rem,1.8vw,1.2rem);color:var(--sky);font-weight:500;margin-bottom:26px;line-height:1.5;max-width:660px}
+.h-body{font-size:1rem;color:rgba(203,213,225,.85);max-width:600px;line-height:1.8;margin-bottom:38px}
+.h-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ─── Sections ────────────────────────────────────────────── */
+section{padding:88px 0}
+#purpose{background:var(--soft-gray)}
+#focus{background:var(--white)}
+#approach{background:var(--soft-gray)}
+#profiles{background:var(--white)}
+#why{background:var(--navy)}
+#context{background:var(--soft-gray)}
+#backgrounds{background:var(--white);padding:60px 0}
+#contact{background:var(--navy-deep)}
+#disclaimer{background:var(--navy-deep);padding:36px 0;border-top:1px solid rgba(56,189,248,.07)}
+
+/* ─── Purpose ─────────────────────────────────────────────── */
+.purpose-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.purpose-g p{color:var(--slate);font-size:1.01rem;line-height:1.85;margin-bottom:18px}
+.purpose-g p:last-child{margin-bottom:0}
+.img-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--navy-mid)}
+.img-wrap.aspect-169{aspect-ratio:16/9}
+.img-wrap.aspect-43{aspect-ratio:4/3}
+.img-wrap img{width:100%;height:100%;object-fit:cover;opacity:.9}
+
+/* ─── Focus ───────────────────────────────────────────────── */
+.focus-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.f-card{background:var(--soft-gray);border-radius:var(--r-md);padding:28px 26px;border:1px solid rgba(203,213,225,.5);transition:box-shadow var(--ease),transform var(--ease),border-color var(--ease);position:relative;overflow:hidden}
+.f-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sky);opacity:0;transition:opacity var(--ease)}
+.f-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:rgba(56,189,248,.25)}
+.f-card:hover::before{opacity:1}
+.f-icon{width:40px;height:40px;border-radius:10px;background:var(--pale-sky);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.f-icon svg{width:20px;height:20px;stroke:var(--sky-dark);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.f-card h3{font-size:.94rem;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.f-card p{font-size:.87rem;color:var(--slate);line-height:1.75}
+
+/* ─── Approach ────────────────────────────────────────────── */
+.approach-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:flex-start}
+.sticky-img{position:sticky;top:90px}
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(203,213,225,.4)}
+.step:last-child{border-bottom:none}
+.s-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--sky);font-size:.79rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.s-body h4{font-size:.94rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.s-body p{font-size:.89rem;color:var(--slate);line-height:1.75}
+
+/* ─── Profiles ────────────────────────────────────────────── */
+.prof-intro{margin-bottom:52px}
+.prof-g{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.p-card{background:var(--soft-gray);border-radius:var(--r-lg);padding:36px 32px 32px;border:1px solid rgba(203,213,225,.5);box-shadow:var(--shadow-sm);transition:box-shadow var(--ease)}
+.p-card:hover{box-shadow:var(--shadow-md)}
+.p-photo{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid rgba(56,189,248,.25);background:var(--navy-mid);margin-bottom:20px}
+.p-photo img{width:100%;height:100%;object-fit:cover}
+.p-name{font-size:1.18rem;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:2px}
+.p-name2{font-size:.94rem;color:var(--slate);font-weight:500;margin-bottom:14px}
+.p-role{font-size:.79rem;color:var(--slate);line-height:1.65;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(203,213,225,.5)}
+.p-bio{font-size:.9rem;color:var(--slate);line-height:1.8;margin-bottom:16px}
+.p-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tag{background:var(--pale-sky);color:var(--navy);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:20px}
+.p-links{display:flex;flex-direction:column;gap:8px}
+.link-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.bg-link{font-size:.77rem;color:var(--sky-dark);text-decoration:underline;text-underline-offset:2px}
+.bg-link:hover{color:var(--navy)}
+.li-link{font-size:.78rem;color:var(--slate);display:inline-flex;align-items:center;gap:5px}
+.li-link:hover{color:var(--sky-dark);text-decoration:underline}
+.li-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.bg-lbl{font-size:.71rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);margin-bottom:4px}
+
+/* ─── Why ─────────────────────────────────────────────────── */
+.why-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-g .sec-title{color:var(--white)}
+.why-g .eyebrow{color:var(--sky)}
+.why-g .bar{background:var(--sky)}
+.why-txt p{color:rgba(203,213,225,.85);font-size:1rem;line-height:1.85;margin-bottom:18px}
+.why-txt p:last-child{margin-bottom:0}
+.pillars{display:flex;flex-direction:column;gap:16px}
+.pillar{background:rgba(255,255,255,.05);border:1px solid rgba(56,189,248,.14);border-left:3px solid var(--sky);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 20px}
+.pillar h4{font-size:.88rem;font-weight:700;color:var(--sky);margin-bottom:6px;letter-spacing:.02em}
+.pillar p{font-size:.87rem;color:rgba(203,213,225,.8);line-height:1.7;margin:0}
+
+/* ─── Context ─────────────────────────────────────────────── */
+.ctx-g{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:48px}
+.ctx-h{font-size:.81rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky-dark);margin-bottom:16px}
+.ctx-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ctx-list li{display:flex;align-items:flex-start;gap:10px;font-size:.91rem;color:var(--slate);line-height:1.6}
+.ctx-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sky);flex-shrink:0;margin-top:7px}
+.cand-cards{display:flex;flex-direction:column;gap:12px}
+.cand{background:var(--white);border:1px solid rgba(203,213,225,.6);border-radius:var(--r-md);padding:16px 18px;display:flex;align-items:center;gap:14px}
+.cdot{width:8px;height:8px;border-radius:50%;background:var(--sky);flex-shrink:0}
+.cname{font-size:.92rem;font-weight:600;color:var(--navy)}
+.ctx-note{margin-top:32px;padding:14px 18px;background:var(--pale-sky);border-left:3px solid var(--sky);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:.79rem;color:var(--slate);line-height:1.65;grid-column:1/-1}
+
+/* ─── Backgrounds ─────────────────────────────────────────── */
+.bg-inner p{font-size:.9rem;color:var(--slate);line-height:1.8;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chip{font-size:.77rem;color:var(--navy);background:var(--soft-gray);border:1px solid rgba(203,213,225,.6);border-radius:20px;padding:5px 13px;transition:border-color var(--ease),background var(--ease)}
+.chip:hover{border-color:var(--sky);background:var(--pale-sky);text-decoration:none}
+
+/* ─── Contact ─────────────────────────────────────────────── */
+.contact-ct{text-align:center;max-width:600px;margin:0 auto}
+.contact-ct .eyebrow{color:var(--sky)}
+.contact-ct .sec-title{color:var(--white)}
+.contact-ct .bar{margin:0 auto 28px}
+.contact-ct p{color:rgba(203,213,225,.8);font-size:1rem;line-height:1.8;margin-bottom:36px}
+.contact-ctas{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+/* ─── Disclaimer / Footer ─────────────────────────────────── */
+.disc p{font-size:.74rem;color:rgba(148,163,184,.6);line-height:1.7;max-width:900px;margin:0 auto;text-align:center}
+footer{background:var(--navy-deep);padding:26px 0 22px;border-top:1px solid rgba(56,189,248,.06)}
+.ft{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-logo{font-size:.82rem;font-weight:700;color:rgba(203,213,225,.55);letter-spacing:.06em}
+.ft-copy{font-size:.74rem;color:rgba(148,163,184,.45)}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media(max-width:960px){
+  section{padding:64px 0}
+  .purpose-g,.approach-g,.why-g,.ctx-g,.prof-g{grid-template-columns:1fr;gap:36px}
+  .focus-g{grid-template-columns:repeat(2,1fr)}
+  .sticky-img{position:static}
+  nav{display:none}
+  .ham{display:flex}
+}
+@media(max-width:600px){
+  .container{padding:0 18px}
+  .focus-g{grid-template-columns:1fr}
+  .h-ctas{flex-direction:column}
+  .ctx-g{grid-template-columns:1fr}
+  .prof-g{grid-template-columns:1fr}
+  .ft{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body class="lang-en">
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="hd">
+      <div class="logo"><span class="logo-sky">Sky</span>fellow Initiative</div>
+      <nav>
+        <a href="#purpose"  class="nav-a"><span class="en">Purpose</span><span class="jp">目的</span></a>
+        <a href="#focus"    class="nav-a"><span class="en">Focus Areas</span><span class="jp">重点領域</span></a>
+        <a href="#approach" class="nav-a"><span class="en">Approach</span><span class="jp">進め方</span></a>
+        <a href="#profiles" class="nav-a"><span class="en">Profiles</span><span class="jp">メンバー</span></a>
+        <a href="#contact"  class="nav-a"><span class="en">Contact</span><span class="jp">お問い合わせ</span></a>
+        <div class="lang-tgl">
+          <button class="lbtn act" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lbtn"     id="btn-jp" onclick="setLang('jp')">JP</button>
+        </div>
+      </nav>
+      <button class="ham" onclick="toggleMob()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob-nav" id="mob-nav">
+    <a href="#purpose"  onclick="closeMob()"><span class="en">Purpose</span><span class="jp">目的</span></a>
+    <a href="#focus"    onclick="closeMob()"><span class="en">Focus Areas</span><span class="jp">重点領域</span></a>
+    <a href="#approach" onclick="closeMob()"><span class="en">Approach</span><span class="jp">進め方</span></a>
+    <a href="#profiles" onclick="closeMob()"><span class="en">Profiles</span><span class="jp">メンバー</span></a>
+    <a href="#contact"  onclick="closeMob()"><span class="en">Contact</span><span class="jp">お問い合わせ</span></a>
+    <div class="mob-lang">
+      <button class="lbtn act" id="mbtn-en" onclick="setLang('en')">EN</button>
+      <button class="lbtn"     id="mbtn-jp" onclick="setLang('jp')">JP</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-bg"></div>
+  <div class="h-ov"></div>
+  <div class="container">
+    <div class="h-ct">
+
+      <div class="en">
+        <div class="h-tag">Independent Business Development Initiative</div>
+        <h1 class="h-title">Skyfellow Initiative</h1>
+        <p class="h-sub">Connecting Global Platforms with Emerging Technology Ecosystems</p>
+        <p class="h-body">Skyfellow is an independent business development initiative connecting global platforms with emerging technology ecosystems. Led by Hidemichi Suzuki and Akira Miwa, the initiative supports early-stage market mapping, partner discovery, and the structuring of potential collaboration themes across technology, mobility, supply chain, and industrial domains.</p>
+        <div class="h-ctas">
+          <a href="#profiles" class="btn btn-primary">View Profiles</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTvJIHD_VzCS0k62BAvbBZLiiRW53IRxG9vadKLNTo1fCPhw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Contact</a>
+        </div>
+      </div>
+
+      <div class="jp">
+        <div class="h-tag">独立型ビジネス開発イニシアチブ</div>
+        <h1 class="h-title">Skyfellow Initiative</h1>
+        <p class="h-sub">グローバルプラットフォームと新興テクノロジー・エコシステムをつなぐ独立型ビジネス開発イニシアチブ</p>
+        <p class="h-body">Skyfellow Initiativeは、グローバル企業・産業プラットフォームと、新興テクノロジー・エコシステムをつなぐ独立型のビジネス開発イニシアチブです。鈴木英道と三輪明が中心となり、初期段階の市場整理、候補企業探索、パートナー候補の把握、協業テーマの設計を支援します。</p>
+        <div class="h-ctas">
+          <a href="#profiles" class="btn btn-primary">プロフィールを見る</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScNIMPz_OXVuIODatJYVQcRsLdIjaANQI_PssBytsn-0CDx2g/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">問い合わせる</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PURPOSE -->
+<section id="purpose">
+  <div class="container">
+
+    <div class="en">
+      <div class="purpose-g">
+        <div>
+          <span class="eyebrow">Our Purpose</span>
+          <h2 class="sec-title">Purpose of the Initiative</h2>
+          <div class="bar"></div>
+          <p>Skyfellow supports global companies and industrial platforms that are exploring new business development opportunities through external technology collaboration.</p>
+          <p>The initiative focuses on identifying relevant emerging technologies, startup candidates, VC-connected opportunities, and IPO-near companies that may contribute to future collaboration discussions.</p>
+          <p>It is not designed as an acquisition mandate or investment solicitation. At the initial stage, Skyfellow focuses on market mapping, hypothesis development, informal temperature checks, and the preparation of practical discussion themes before formal commercial engagement.</p>
+        </div>
+        <div class="img-wrap aspect-169">
+          <img src="skyfellow-global-network.jpeg" alt="Global network and cross-border connectivity" />
+        </div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <div class="purpose-g">
+        <div>
+          <span class="eyebrow">目的</span>
+          <h2 class="sec-title">イニシアチブの目的</h2>
+          <div class="bar"></div>
+          <p>Skyfellow Initiativeは、外部テクノロジーとの連携を通じて、新たな事業開発機会を探索するグローバル企業・産業プラットフォームを支援するための取り組みです。</p>
+          <p>主な役割は、新興テクノロジー企業、スタートアップ、VCネットワーク、IPO準備・IPO近接企業などを整理し、将来的な協業可能性を検討するための初期仮説を構築することです。</p>
+          <p>本イニシアチブは、買収・出資案件の斡旋を目的とするものではありません。初期段階では、市場整理、候補企業の抽出、非公式な温度感確認、正式協議前のテーマ設計を中心に行います。</p>
+        </div>
+        <div class="img-wrap aspect-169">
+          <img src="skyfellow-global-network.jpeg" alt="グローバルネットワークと国際接続" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section id="focus">
+  <div class="container">
+
+    <div class="en">
+      <span class="eyebrow">What We Focus On</span>
+      <h2 class="sec-title">Focus Areas</h2>
+      <div class="bar"></div>
+      <div class="focus-g">
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+          <h3>Emerging Technology Mapping</h3>
+          <p>Identifying relevant technology companies, startups, and innovation themes across selected industrial domains.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Mobility &amp; Industrial Platforms</h3>
+          <p>Exploring collaboration themes across mobility, automotive, logistics, infrastructure, and industrial technology fields.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <h3>Supply Chain Resilience &amp; BCP</h3>
+          <p>Mapping solutions related to procurement visibility, supplier risk, business continuity, and supply chain resilience.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>VC &amp; IPO-Near Company Interface</h3>
+          <p>Leveraging professional networks to understand promising companies before or around major growth stages.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Strategic Communication</h3>
+          <p>Structuring clear narratives and discussion materials for global and regional stakeholders.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>Cross-Border Business Development</h3>
+          <p>Supporting practical coordination between global platforms and local technology ecosystems.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <span class="eyebrow">重点領域</span>
+      <h2 class="sec-title">重点領域</h2>
+      <div class="bar"></div>
+      <div class="focus-g">
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+          <h3>新興テクノロジーの整理</h3>
+          <p>特定の産業領域における有望なテクノロジー企業、スタートアップ、技術テーマを整理します。</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>モビリティ・産業プラットフォーム</h3>
+          <p>モビリティ、自動車、物流、インフラ、産業技術領域における協業テーマを検討します。</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <h3>サプライチェーン・BCP</h3>
+          <p>調達可視化、サプライヤーリスク、事業継続、サプライチェーン強靭化に関するソリューションを整理します。</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>VC・IPO近接企業との接点</h3>
+          <p>VCネットワークやIPO準備企業周辺の情報を活用し、成長企業の把握を支援します。</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>戦略的コミュニケーション</h3>
+          <p>グローバル企業・地域側関係者向けに、分かりやすい提案ストーリーと協議資料を設計します。</p>
+        </div>
+        <div class="f-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>クロスボーダー事業開発</h3>
+          <p>グローバルプラットフォームと各地域のテクノロジー・エコシステムをつなぐ実務的な調整を支援します。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="container">
+
+    <div class="en">
+      <span class="eyebrow">How We Work</span>
+      <h2 class="sec-title">Project Approach</h2>
+      <div class="bar"></div>
+      <div class="approach-g">
+        <div class="img-wrap aspect-43 sticky-img">
+          <img src="skyfellow-bridge-concept.jpeg" alt="Bridge concept representing global platform connectivity" />
+        </div>
+        <div class="steps">
+          <div class="step"><div class="s-num">01</div><div class="s-body"><h4>Identify Relevant Domains</h4><p>Clarify the business themes, technology domains, and stakeholder needs.</p></div></div>
+          <div class="step"><div class="s-num">02</div><div class="s-body"><h4>Map Potential Candidates</h4><p>Identify startups, growth companies, IPO-near companies, and ecosystem players that may fit the initial themes.</p></div></div>
+          <div class="step"><div class="s-num">03</div><div class="s-body"><h4>Conduct Informal Temperature Checks</h4><p>Where appropriate, conduct informal discussions to understand interest level, timing, and practical feasibility.</p></div></div>
+          <div class="step"><div class="s-num">04</div><div class="s-body"><h4>Structure Collaboration Themes</h4><p>Organize possible discussion themes before any formal introduction or commercial negotiation.</p></div></div>
+          <div class="step"><div class="s-num">05</div><div class="s-body"><h4>Prepare Discussion Materials</h4><p>Create concise materials that help global and local stakeholders understand the opportunity clearly.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <span class="eyebrow">進め方</span>
+      <h2 class="sec-title">進め方</h2>
+      <div class="bar"></div>
+      <div class="approach-g">
+        <div class="img-wrap aspect-43 sticky-img">
+          <img src="skyfellow-bridge-concept.jpeg" alt="グローバルプラットフォームと新興エコシステムをつなぐコンセプト" />
+        </div>
+        <div class="steps">
+          <div class="step"><div class="s-num">01</div><div class="s-body"><h4>領域・テーマの整理</h4><p>事業テーマ、技術領域、関係者のニーズを明確化します。</p></div></div>
+          <div class="step"><div class="s-num">02</div><div class="s-body"><h4>候補企業の抽出</h4><p>スタートアップ、成長企業、IPO近接企業、関連エコシステムの中から初期テーマに合う候補を整理します。</p></div></div>
+          <div class="step"><div class="s-num">03</div><div class="s-body"><h4>非公式な温度感確認</h4><p>必要に応じて、先方の関心度、タイミング、実務上の可能性を非公式に確認します。</p></div></div>
+          <div class="step"><div class="s-num">04</div><div class="s-body"><h4>協業テーマの設計</h4><p>正式な紹介や商談に入る前に、協議すべきテーマや論点を整理します。</p></div></div>
+          <div class="step"><div class="s-num">05</div><div class="s-body"><h4>協議資料の準備</h4><p>グローバル企業側・地域側の双方が機会を理解しやすいよう、簡潔な資料を作成します。</p></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROFILES -->
+<section id="profiles">
+  <div class="container">
+
+    <!-- EN Profiles -->
+    <div class="en">
+      <div class="prof-intro">
+        <span class="eyebrow">The Team</span>
+        <h2 class="sec-title">Founding Members</h2>
+        <div class="bar"></div>
+        <p class="sec-intro">The founding members bring professional experience across technology, investor relations, disclosure services, listed-company communications, and cross-border business development.</p>
+      </div>
+      <div class="prof-g">
+
+        <!-- Suzuki EN -->
+        <div class="p-card">
+          <div class="p-photo"><img src="suzuki-profile-photo.jpeg" alt="Hidemichi Suzuki profile photo" /></div>
+          <div class="p-name">Hidemichi Suzuki</div>
+          <div class="p-name2">鈴木 英道</div>
+          <div class="p-role">
+            Co-Founder, Skyfellow Initiative<br />
+            Director with Representative Authority / Chief Communication Officer, IQ121.COM Limited<br />
+            Director with Representative Authority, Amazon Natural Spring Waters Limited
+          </div>
+          <p class="p-bio">Hidemichi Suzuki brings executive-level experience in cross-border business development, investor relations, strategic communication, and international stakeholder coordination.</p>
+          <p class="p-bio">He currently serves as Director with Representative Authority and Chief Communication Officer at IQ121.COM Limited, a UK-based secure smartphone application company. He also serves as Director with Representative Authority at Amazon Natural Spring Waters Limited.</p>
+          <p class="p-bio">His background spans technology, natural resources, consumer products, overseas sales, investor relations, and business development, with prior experience at Minsetsu, A-STORY, and Aicello. He studied Finance and Aerospace Engineering at Arizona State University.</p>
+          <p class="p-bio">Within Skyfellow Initiative, Suzuki focuses on strategic positioning, global communication, investor and VC network coordination, and the structuring of early collaboration themes between global platforms and emerging technology companies.</p>
+          <div class="p-tags">
+            <span class="tag">Cross-border business development</span>
+            <span class="tag">Investor relations</span>
+            <span class="tag">Strategic communication</span>
+            <span class="tag">Startup &amp; VC network access</span>
+            <span class="tag">Global platform coordination</span>
+          </div>
+          <div class="p-links">
+            <div class="bg-lbl">Professional Background</div>
+            <div class="link-row">
+              <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="bg-link">IQ121.COM Limited</a>
+              <a href="https://amazonspringwaters.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Amazon Natural Spring Waters</a>
+              <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Minsetsu</a>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-a04029219/" target="_blank" rel="noopener noreferrer" class="li-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/henry-s-a04029219
+            </a>
+          </div>
+        </div>
+
+        <!-- Miwa EN -->
+        <div class="p-card">
+          <div class="p-photo"><img src="miwa-profile-photo.jpeg" alt="Akira Miwa profile photo" /></div>
+          <div class="p-name">Akira Miwa</div>
+          <div class="p-name2">三輪 明</div>
+          <div class="p-role">
+            Co-Founder, Skyfellow Initiative<br />
+            Japan Business Development, IQ121.COM Limited<br />
+            Advisor, Figurout, Inc.<br />
+            Former Senior Manager, TAKARA PRINTING CO., LTD.
+          </div>
+          <p class="p-bio">Akira Miwa brings extensive experience in Japan's listed-company, investor relations, disclosure services, and IPO-adjacent ecosystem.</p>
+          <p class="p-bio">He is currently involved in Japan-side business development for IQ121.COM Limited and also serves as an Advisor to Figurout, Inc.</p>
+          <p class="p-bio">Miwa previously spent more than 25 years at TAKARA PRINTING CO., LTD., where he developed deep practical knowledge and corporate relationships across listed companies, IPO-preparation companies, disclosure services, and investor relations communities. He also held sales specialist roles at Minsetsu, Inc. and Figurout, supporting services that connect listed-company IR teams with institutional investors and related stakeholders.</p>
+          <p class="p-bio">Within Skyfellow Initiative, Miwa focuses on Japan-side corporate access, IPO-near company discovery, IR ecosystem intelligence, and practical coordination with high-potential technology companies.</p>
+          <div class="p-tags">
+            <span class="tag">Japan corporate network</span>
+            <span class="tag">IPO-near company access</span>
+            <span class="tag">Investor relations ecosystem</span>
+            <span class="tag">Listed-company communication</span>
+            <span class="tag">Business development execution</span>
+          </div>
+          <div class="p-links">
+            <div class="bg-lbl">Professional Background</div>
+            <div class="link-row">
+              <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="bg-link">IQ121.COM Limited</a>
+              <a href="https://www.takara-print.co.jp/" target="_blank" rel="noopener noreferrer" class="bg-link">TAKARA PRINTING</a>
+              <a href="https://figurout.co.jp/" target="_blank" rel="noopener noreferrer" class="bg-link">Figurout</a>
+              <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Minsetsu</a>
+            </div>
+            <a href="https://www.linkedin.com/in/akira-miwa-1b1859a5/" target="_blank" rel="noopener noreferrer" class="li-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/akira-miwa-1b1859a5
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- JP Profiles -->
+    <div class="jp">
+      <div class="prof-intro">
+        <span class="eyebrow">メンバー</span>
+        <h2 class="sec-title">創設メンバー</h2>
+        <div class="bar"></div>
+        <p class="sec-intro">創設メンバーは、テクノロジー、投資家対応、ディスクロージャー支援、上場企業コミュニケーション、クロスボーダー事業開発における実務経験を有しています。</p>
+      </div>
+      <div class="prof-g">
+
+        <!-- Suzuki JP -->
+        <div class="p-card">
+          <div class="p-photo"><img src="suzuki-profile-photo.jpeg" alt="鈴木英道 プロフィール写真" /></div>
+          <div class="p-name">鈴木 英道</div>
+          <div class="p-name2">Hidemichi Suzuki</div>
+          <div class="p-role">
+            Skyfellow Initiative 共同創設者<br />
+            IQ121.COM Limited 代表権を有する取締役 / Chief Communication Officer<br />
+            Amazon Natural Spring Waters Limited 代表権を有する取締役
+          </div>
+          <p class="p-bio">鈴木英道は、クロスボーダー事業開発、投資家対応、戦略的コミュニケーション、海外ステークホルダーとの調整において、経営レベルの実務経験を有しています。</p>
+          <p class="p-bio">現在は、英国を拠点とするセキュアなスマートフォンアプリ企業であるIQ121.COM Limitedにて代表権を有する取締役およびChief Communication Officerを務めています。また、Amazon Natural Spring Waters Limitedにおいても代表権を有する取締役を務めています。</p>
+          <p class="p-bio">これまで、テクノロジー、天然資源、消費財、海外営業、投資家対応、事業開発など幅広い領域に携わり、Minsetsu、A-STORY、Aicelloでの経験も有しています。Arizona State UniversityではFinanceおよびAerospace Engineeringを学びました。</p>
+          <p class="p-bio">Skyfellow Initiativeでは、戦略的ポジショニング、グローバルコミュニケーション、投資家・VCネットワークとの調整、グローバルプラットフォームと新興テクノロジー企業の初期協業テーマ設計を担います。</p>
+          <div class="p-tags">
+            <span class="tag">クロスボーダー事業開発</span>
+            <span class="tag">投資家対応</span>
+            <span class="tag">戦略的コミュニケーション</span>
+            <span class="tag">スタートアップ・VCネットワーク</span>
+            <span class="tag">グローバル企業との調整</span>
+          </div>
+          <div class="p-links">
+            <div class="bg-lbl">主な経歴</div>
+            <div class="link-row">
+              <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="bg-link">IQ121.COM Limited</a>
+              <a href="https://amazonspringwaters.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Amazon Natural Spring Waters</a>
+              <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Minsetsu</a>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-a04029219/" target="_blank" rel="noopener noreferrer" class="li-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/henry-s-a04029219
+            </a>
+          </div>
+        </div>
+
+        <!-- Miwa JP -->
+        <div class="p-card">
+          <div class="p-photo"><img src="miwa-profile-photo.jpeg" alt="三輪明 プロフィール写真" /></div>
+          <div class="p-name">三輪 明</div>
+          <div class="p-name2">Akira Miwa</div>
+          <div class="p-role">
+            Skyfellow Initiative 共同創設者<br />
+            IQ121.COM Limited 日本国内事業開拓<br />
+            Figurout, Inc. 顧問<br />
+            元 宝印刷株式会社 参事
+          </div>
+          <p class="p-bio">三輪明は、日本の上場企業、投資家対応、ディスクロージャー支援、IPO準備企業周辺のエコシステムにおいて豊富な経験を有しています。</p>
+          <p class="p-bio">現在はIQ121.COM Limitedの日本国内における事業開拓に関与しており、Figurout, Inc.の顧問も務めています。</p>
+          <p class="p-bio">宝印刷株式会社に25年以上在籍し、上場企業、IPO準備企業、ディスクロージャー支援、IR関連コミュニティにおいて深い実務知見と企業ネットワークを築いてきました。Minsetsu, Inc.およびFiguroutでは営業スペシャリストとして、上場企業IR担当者と機関投資家・関係者をつなぐサービスに携わりました。</p>
+          <p class="p-bio">Skyfellow Initiativeでは、日本側の企業接点、IPO近接企業の探索、IRエコシステムに関する知見、成長可能性の高いテクノロジー企業との実務的な調整を担います。</p>
+          <div class="p-tags">
+            <span class="tag">日本企業ネットワーク</span>
+            <span class="tag">IPO近接企業への接点</span>
+            <span class="tag">IRエコシステム</span>
+            <span class="tag">上場企業コミュニケーション</span>
+            <span class="tag">事業開発の実行力</span>
+          </div>
+          <div class="p-links">
+            <div class="bg-lbl">主な経歴</div>
+            <div class="link-row">
+              <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="bg-link">IQ121.COM Limited</a>
+              <a href="https://www.takara-print.co.jp/" target="_blank" rel="noopener noreferrer" class="bg-link">宝印刷株式会社</a>
+              <a href="https://figurout.co.jp/" target="_blank" rel="noopener noreferrer" class="bg-link">Figurout</a>
+              <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="bg-link">Minsetsu</a>
+            </div>
+            <a href="https://www.linkedin.com/in/akira-miwa-1b1859a5/" target="_blank" rel="noopener noreferrer" class="li-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/akira-miwa-1b1859a5
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY THIS TEAM -->
+<section id="why">
+  <div class="container">
+
+    <div class="en">
+      <div class="why-g">
+        <div class="why-txt">
+          <span class="eyebrow">The Partnership</span>
+          <h2 class="sec-title">Why Suzuki and Miwa</h2>
+          <div class="bar"></div>
+          <p>Suzuki provides cross-border business development, investor relations, and strategic communication capability, supported by current director-level responsibilities in international companies. Miwa provides deep Japan-side corporate, IR, IPO-near company, and listed-company network access, supported by long-term experience in disclosure services and investor relations-related businesses.</p>
+          <p>Together, they create a practical interface between global platforms and emerging technology ecosystems. The team is particularly suited for early-stage market mapping, informal discussions, candidate discovery, and relationship-driven coordination before formal commercial discussions begin.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <h4>Global Communication &amp; Strategic Positioning</h4>
+            <p>Structuring narratives and materials that resonate with global enterprise stakeholders across different cultural and business contexts.</p>
+          </div>
+          <div class="pillar">
+            <h4>Japan Corporate &amp; IR Network Access</h4>
+            <p>Deep relationships across Japan's listed-company ecosystem, IPO-near companies, and the disclosure services and IR communities.</p>
+          </div>
+          <div class="pillar">
+            <h4>Relationship-Driven Discovery</h4>
+            <p>Informal, trust-based access to early-stage opportunities before they enter formal market processes or public awareness.</p>
+          </div>
+          <div class="pillar">
+            <h4>Cross-Border Coordination</h4>
+            <p>Bridging the gap between global platform requirements and local technology ecosystem capabilities through practical engagement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <div class="why-g">
+        <div class="why-txt">
+          <span class="eyebrow">チームの強み</span>
+          <h2 class="sec-title">鈴木英道と三輪明の組み合わせ</h2>
+          <div class="bar"></div>
+          <p>鈴木は、国際企業における現任の取締役としての責任を背景に、クロスボーダー事業開発、投資家対応、戦略的コミュニケーションに強みを有しています。三輪は、ディスクロージャー支援およびIR関連事業における長年の経験を背景に、日本側の企業ネットワーク、IR領域、IPO近接企業、上場企業コミュニケーションに関する深い実務経験を有しています。</p>
+          <p>両名の組み合わせにより、グローバルプラットフォームと新興テクノロジー・エコシステムをつなぐ実務的なインターフェースを構築することができます。特に、正式な商業協議に入る前の市場整理、非公式な温度感確認、候補企業探索、関係性を重視した初期調整に適しています。</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <h4>グローバルコミュニケーション・戦略的ポジショニング</h4>
+            <p>異なる文化・ビジネス背景を持つグローバル企業のステークホルダーに響くストーリーと資料を設計します。</p>
+          </div>
+          <div class="pillar">
+            <h4>日本企業・IRネットワークへの接点</h4>
+            <p>上場企業エコシステム、IPO近接企業、ディスクロージャー支援・IRコミュニティにおける深い関係性を有しています。</p>
+          </div>
+          <div class="pillar">
+            <h4>関係性を重視した機会探索</h4>
+            <p>正式な市場プロセスや公開情報に入る前の、信頼ベースの非公式な初期機会へのアクセスを持ちます。</p>
+          </div>
+          <div class="pillar">
+            <h4>クロスボーダー調整</h4>
+            <p>グローバルプラットフォームのニーズと、地域のテクノロジー・エコシステムの力を実務的に橋渡しします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INITIAL STRATEGIC CONTEXT -->
+<section id="context">
+  <div class="container">
+
+    <div class="en">
+      <span class="eyebrow">Early Focus</span>
+      <h2 class="sec-title">Initial Strategic Context</h2>
+      <div class="bar"></div>
+      <p class="sec-intro">Skyfellow Initiative is designed to remain sector-flexible. Its initial strategic context includes selected opportunities across Japan-linked technology ecosystems and industrial domains.</p>
+      <div class="ctx-g">
+        <div>
+          <div class="ctx-h">Initial Themes May Include</div>
+          <ul class="ctx-list">
+            <li>Supply chain resilience and BCP-related platforms</li>
+            <li>Location intelligence and mobility data solutions</li>
+            <li>Security, authentication, and trust-layer technologies</li>
+            <li>Industrial technology and operational efficiency solutions</li>
+            <li>Startup and IPO-near company discovery</li>
+            <li>VC-connected emerging technology opportunities</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ctx-h">Preliminary Review Examples</div>
+          <div class="cand-cards">
+            <div class="cand"><div class="cdot"></div><div class="cname">Resilire</div></div>
+            <div class="cand"><div class="cdot"></div><div class="cname">LocationMind</div></div>
+            <div class="cand"><div class="cdot"></div><div class="cname">AnchorZ</div></div>
+          </div>
+        </div>
+        <div class="ctx-note">These are illustrative candidates only and do not imply any formal relationship, endorsement, mandate, or ongoing transaction.</div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <span class="eyebrow">初期検討領域</span>
+      <h2 class="sec-title">初期検討領域</h2>
+      <div class="bar"></div>
+      <p class="sec-intro">Skyfellow Initiativeは、特定の業界や国に限定されない柔軟なイニシアチブとして設計されています。初期段階では、日本に関連するテクノロジー・エコシステムや産業領域を中心に、複数の可能性を検討します。</p>
+      <div class="ctx-g">
+        <div>
+          <div class="ctx-h">初期テーマ（例）</div>
+          <ul class="ctx-list">
+            <li>サプライチェーン強靭化・BCP関連プラットフォーム</li>
+            <li>位置情報インテリジェンス・モビリティデータソリューション</li>
+            <li>セキュリティ、認証、トラストレイヤー技術</li>
+            <li>産業技術・業務効率化ソリューション</li>
+            <li>スタートアップ・IPO近接企業の探索</li>
+            <li>VCネットワークに接続する新興テクノロジー機会</li>
+          </ul>
+        </div>
+        <div>
+          <div class="ctx-h">初期的な検討例</div>
+          <div class="cand-cards">
+            <div class="cand"><div class="cdot"></div><div class="cname">Resilire</div></div>
+            <div class="cand"><div class="cdot"></div><div class="cname">LocationMind</div></div>
+            <div class="cand"><div class="cdot"></div><div class="cname">AnchorZ</div></div>
+          </div>
+        </div>
+        <div class="ctx-note">これらはあくまでも初期的・例示的な候補であり、正式な提携、推奨、委任、取引関係を示すものではありません。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROFESSIONAL BACKGROUNDS -->
+<section id="backgrounds">
+  <div class="container">
+
+    <div class="en">
+      <span class="eyebrow">Background References</span>
+      <h2 class="sec-title" style="font-size:1.45rem">Professional Backgrounds</h2>
+      <div class="bar"></div>
+      <div class="bg-inner">
+        <p>Professional backgrounds include technology, investor relations, disclosure services, listed-company communications, global business development, corporate networks, and startup ecosystem access.</p>
+        <p style="font-size:.8rem;color:var(--mist)">Company names are listed as current or previous professional background references only. These companies are not partners, sponsors, shareholders, endorsers, or official supporters of Skyfellow Initiative.</p>
+        <div class="chips">
+          <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="chip">IQ121.COM Limited</a>
+          <a href="https://amazonspringwaters.com/" target="_blank" rel="noopener noreferrer" class="chip">Amazon Natural Spring Waters Limited</a>
+          <a href="https://www.takara-print.co.jp/" target="_blank" rel="noopener noreferrer" class="chip">TAKARA PRINTING CO., LTD.</a>
+          <a href="https://figurout.co.jp/" target="_blank" rel="noopener noreferrer" class="chip">Figurout, Inc.</a>
+          <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="chip">Minsetsu, Inc.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp">
+      <span class="eyebrow">経歴参照</span>
+      <h2 class="sec-title" style="font-size:1.45rem">主な経歴領域</h2>
+      <div class="bar"></div>
+      <div class="bg-inner">
+        <p>創設メンバーの主な経歴領域には、テクノロジー、投資家対応、ディスクロージャー支援、上場企業コミュニケーション、グローバル事業開発、企業ネットワーク、スタートアップ・エコシステムとの接点が含まれます。</p>
+        <p style="font-size:.8rem;color:var(--mist)">会社名はあくまでも現在または過去の職務経歴として表示しています。これらの会社はSkyfellow Initiativeの提携先、支援企業、出資者、スポンサー、正式関係会社ではありません。</p>
+        <div class="chips">
+          <a href="https://www.iq121.com/" target="_blank" rel="noopener noreferrer" class="chip">IQ121.COM Limited</a>
+          <a href="https://amazonspringwaters.com/" target="_blank" rel="noopener noreferrer" class="chip">Amazon Natural Spring Waters Limited</a>
+          <a href="https://www.takara-print.co.jp/" target="_blank" rel="noopener noreferrer" class="chip">宝印刷株式会社</a>
+          <a href="https://figurout.co.jp/" target="_blank" rel="noopener noreferrer" class="chip">Figurout, Inc.</a>
+          <a href="https://minsetsu.com/" target="_blank" rel="noopener noreferrer" class="chip">Minsetsu, Inc.</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-ct">
+
+      <div class="en">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="sec-title">Contact</h2>
+        <div class="bar"></div>
+        <p>For exploratory discussions, professional introductions, or initial collaboration themes, please use the contact form below.</p>
+        <div class="contact-ctas">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTvJIHD_VzCS0k62BAvbBZLiiRW53IRxG9vadKLNTo1fCPhw/viewform?usp=header"
+             target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contact Skyfellow Initiative</a>
+        </div>
+      </div>
+
+      <div class="jp">
+        <span class="eyebrow">お問い合わせ</span>
+        <h2 class="sec-title">お問い合わせ</h2>
+        <div class="bar"></div>
+        <p>初期的な協議、専門的な紹介、協業テーマの整理に関するご相談は、以下のお問い合わせフォームよりご連絡ください。</p>
+        <div class="contact-ctas">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScNIMPz_OXVuIODatJYVQcRsLdIjaANQI_PssBytsn-0CDx2g/viewform?usp=publish-editor"
+             target="_blank" rel="noopener noreferrer" class="btn btn-primary">Skyfellow Initiativeに問い合わせる</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section id="disclaimer">
+  <div class="container">
+    <div class="disc">
+      <div class="en">
+        <p>This page is an independent introductory profile for the Skyfellow Initiative. It does not represent an official partnership, mandate, agency relationship, endorsement, approval, or affiliation by Aptiv PLC, Aptiv Automotive Japan, IQ121.COM Limited, Amazon Natural Spring Waters Limited, Figurout, Inc., TAKARA PRINTING CO., LTD., Minsetsu, Inc., or any company referenced on this page. All collaboration themes and candidate companies are preliminary and subject to further discussion, validation, and appropriate approvals.</p>
+      </div>
+      <div class="jp">
+        <p>本ページは、Skyfellow Initiativeの独立した紹介ページです。本ページは、Aptiv PLC、Aptiv Automotive Japan、IQ121.COM Limited、Amazon Natural Spring Waters Limited、Figurout, Inc.、宝印刷株式会社、Minsetsu, Inc.、または本ページに記載されるいかなる企業による公式な提携、委任、代理関係、承認、推奨、関係会社性を示すものではありません。記載される協業テーマおよび候補企業はすべて初期的な検討事項であり、今後の協議、検証、適切な承認を前提とします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="ft">
+      <div class="ft-logo"><span style="color:var(--sky)">Sky</span>fellow Initiative</div>
+      <div class="ft-copy">&copy; 2025 Skyfellow Initiative. Independent business development initiative.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.documentElement.lang=l==='jp'?'ja':'en';
+  ['btn-en','mbtn-en'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.toggle('act',l==='en');
+  });
+  ['btn-jp','mbtn-jp'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.toggle('act',l==='jp');
+  });
+}
+function toggleMob(){
+  document.getElementById('mob-nav').classList.toggle('open');
+}
+function closeMob(){
+  document.getElementById('mob-nav').classList.remove('open');
+}
+</script>
+
+<!-- Deploy via GitHub Pages by placing this file as index.html in the repository root. -->
+</body>
+</html>
