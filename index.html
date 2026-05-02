@@ -209,7 +209,20 @@ footer{background:var(--navy);padding:26px 0 22px;border-top:1px solid rgba(255,
 .ft-logo{font-size:.82rem;font-weight:700;color:rgba(203,213,225,.65);letter-spacing:.06em}
 .ft-copy{font-size:.74rem;color:rgba(203,213,225,.4)}
 
-/* ─── Responsive ──────────────────────────────────────────── */
+/* ─── Name Origin ──────────────────────────────────────────── */
+#nameorigin{background:var(--pale-sky);padding:60px 0}
+.nameorigin-inner{max-width:820px;margin:0 auto;text-align:center}
+.nameorigin-card{background:rgba(255,255,255,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(14,165,233,.18);border-radius:var(--r-lg);padding:44px 52px;position:relative;overflow:hidden}
+.nameorigin-card::before{content:'"';position:absolute;top:-10px;left:28px;font-size:9rem;line-height:1;color:rgba(14,165,233,.08);font-family:Georgia,serif;pointer-events:none}
+.nameorigin-word{display:inline-flex;align-items:center;gap:18px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+.nw-block{display:flex;flex-direction:column;align-items:center;gap:4px}
+.nw-term{font-size:1.45rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;font-style:italic}
+.nw-def{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-deep)}
+.nw-plus{font-size:1.6rem;font-weight:300;color:var(--silver-blue);line-height:1;margin-top:4px}
+.nameorigin-divider{width:1px;height:40px;background:var(--soft-blue);margin:0 4px;align-self:center}
+.nameorigin-body{font-size:1.02rem;color:var(--slate);line-height:1.85;max-width:680px;margin:0 auto}
+
+
 @media(max-width:960px){
   section{padding:64px 0}
   .purpose-g,.approach-g,.why-g,.ctx-g,.prof-g{grid-template-columns:1fr;gap:36px}
@@ -337,6 +350,55 @@ footer{background:var(--navy);padding:26px 0 22px;border-top:1px solid rgba(255,
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- NAME ORIGIN -->
+<section id="nameorigin">
+  <div class="container">
+    <div class="nameorigin-inner">
+
+      <div class="en">
+        <span class="eyebrow">The Name</span>
+        <h2 class="sec-title">Name Origin</h2>
+        <div class="bar" style="margin:0 auto 32px"></div>
+        <div class="nameorigin-card">
+          <div class="nameorigin-word">
+            <div class="nw-block">
+              <span class="nw-term">Sky</span>
+              <span class="nw-def">Openness &amp; Perspective</span>
+            </div>
+            <span class="nw-plus">+</span>
+            <div class="nw-block">
+              <span class="nw-term">Fellow</span>
+              <span class="nw-def">Trusted Partner</span>
+            </div>
+          </div>
+          <p class="nameorigin-body">Skyfellow combines "sky," representing openness, global perspective, and future possibilities, with "fellow," representing a trusted companion and practical partner. The name reflects the initiative's role as a calm, independent bridge between global platforms and emerging technology ecosystems.</p>
+        </div>
+      </div>
+
+      <div class="jp">
+        <span class="eyebrow">名称について</span>
+        <h2 class="sec-title">名称の由来</h2>
+        <div class="bar" style="margin:0 auto 32px"></div>
+        <div class="nameorigin-card">
+          <div class="nameorigin-word">
+            <div class="nw-block">
+              <span class="nw-term">Sky</span>
+              <span class="nw-def">開かれた視野・可能性</span>
+            </div>
+            <span class="nw-plus">+</span>
+            <div class="nw-block">
+              <span class="nw-term">Fellow</span>
+              <span class="nw-def">信頼できる伴走者</span>
+            </div>
+          </div>
+          <p class="nameorigin-body">Skyfellowは、「空」を意味する "Sky" と、信頼できる伴走者・仲間を意味する "fellow" を組み合わせた名称です。国や業界を越えた広い視野、将来への可能性、そして実務的に伴走する姿勢を表しています。</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
