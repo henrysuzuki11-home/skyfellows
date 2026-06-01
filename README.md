@@ -1,7 +1,7 @@
 # Skyfellow Initiative — Website
 
-Bilingual (EN / JP) single-page website for the Skyfellow Initiative.  
-Built for deployment on **GitHub Pages** with no external dependencies.
+Bilingual (EN / JP) single-page website for the Skyfellow Initiative.
+Built for deployment on **GitHub Pages** with no external dependencies (Google Analytics, Google AdSense, and Google Forms excepted).
 
 ---
 
@@ -9,61 +9,58 @@ Built for deployment on **GitHub Pages** with no external dependencies.
 
 ```
 skyfellow-site/
-├── index.html                   ← Main website (single file, all CSS + JS included)
-├── suzuki-profile-photo.jpeg    ← Hidemichi Suzuki profile photo
-├── miwa-profile-photo.jpeg      ← Akira Miwa profile photo
-├── skyfellow-hero-bg.jpeg       ← Hero section background image
-├── skyfellow-global-network.jpeg← Purpose section supporting image
-├── skyfellow-bridge-concept.jpeg← Approach section supporting image
-└── skyfellow-ogp.jpeg           ← OGP / LinkedIn share image (metadata only)
+├── index.html                      ← Main website (single file, all CSS + JS included)
+├── skyfellow-logo.jpg              ← Official Skyfellow logo (header brand mark)
+├── suzuki-profile-photo.jpeg       ← Suzuki photo for Founding Members section
+├── miwa-profile-photo.jpeg         ← Miwa photo for Founding Members section
+├── suzuki-greeting-photo.jpg       ← Suzuki portrait for Greeting section (Representative)
+├── miwa-greeting-photo.jpg         ← Miwa portrait for Greeting section (Partner)
+├── skyfellow-hero-bg.jpeg          ← Hero section background image
+├── skyfellow-global-network.jpeg   ← Purpose section supporting image
+├── skyfellow-bridge-concept.jpeg   ← Approach section supporting image
+└── skyfellow-ogp.jpeg              ← OGP / LinkedIn share image (metadata only)
 ```
+
+### Notes on photos
+- `suzuki-greeting-photo.jpg` and `miwa-greeting-photo.jpg` are currently set to the same images as the profile photos, so the site renders correctly out of the box. You may replace them with dedicated executive portraits (dark navy / charcoal business suit, conservative tie, professional studio framing) — keep the same filenames.
 
 ---
 
-## GitHub Pages Deployment Steps
+## Integrations Built In
 
-### Option A — New Repository (recommended)
+- **Google Analytics 4** — Measurement ID `G-QJZBGP9JZZ`
+- **Google AdSense** — Publisher `ca-pub-5508289096424625` (head script only, no visible ad blocks)
+- **Google Forms** — separate EN/JP contact forms wired to the language toggle
+- **LinkedIn** — public profile links on each member card
 
-1. Go to [github.com](https://github.com) and sign in.
-2. Click **+** → **New repository**.
-3. Name it `skyfellow-initiative` (or any name you prefer).
-4. Set visibility to **Public**.
-5. Click **Create repository**.
-6. On the next screen, click **uploading an existing file**.
-7. Drag and drop **all files** in this folder into the upload area.
-8. Click **Commit changes**.
-9. Go to **Settings** → **Pages** (left sidebar).
-10. Under **Branch**, select `main` and folder `/` (root) → click **Save**.
-11. Wait ~1 minute. Your site will be live at:  
-    `https://<your-github-username>.github.io/skyfellow-initiative/`
+---
 
-### Option B — Existing Repository via GitHub Desktop
+## GitHub Pages Deployment
 
-1. Open **GitHub Desktop** and clone or open your repository.
-2. Copy all files from this folder into the repository root.
-3. Commit with message: `Add Skyfellow Initiative website`.
-4. Push to `main`.
-5. Enable GitHub Pages in repository Settings → Pages.
+1. Create a new public GitHub repository.
+2. Upload **all files in this folder** to the repository root.
+3. Go to **Settings → Pages** → set Branch to `main`, folder `/` (root) → Save.
+4. After ~1 minute, the site will be live at `https://<username>.github.io/<repo-name>/`.
+
+For deployment to a custom domain (e.g. `skyfellow-initiative.com`), add a `CNAME` file to the repo root containing the domain, and configure DNS at your registrar to point to GitHub Pages.
 
 ---
 
 ## Updating Content
 
-All content is inside `index.html`. Open it in any text editor.
+All content lives inside `index.html`. Open in any text editor.
 
 - **English text**: inside `<div class="en">` blocks
 - **Japanese text**: inside `<div class="jp">` blocks
-- **Contact form links**: search for `docs.google.com/forms` — two separate links (EN and JP)
-- **Profile photos**: replace the `.jpeg` files with the same filenames
-- **Colors**: CSS variables are at the top of the `<style>` block (`:root { ... }`)
+- **Contact form links**: search for `docs.google.com/forms`
+- **Color tokens**: CSS variables defined in `:root { ... }` at the top of the `<style>` block
 
 ---
 
 ## Technical Notes
 
-- No external libraries or CDN dependencies — works offline after initial load.
-- GitHub Pages compatible (pure static HTML/CSS/JS).
+- Pure static HTML/CSS/JS — GitHub Pages compatible, no build step.
 - Responsive: desktop, tablet, and mobile.
-- Language toggle: EN / JP — default is English.
-- All external links open in a new tab (`target="_blank"`).
-- No email addresses are displayed visibly on the page.
+- Default language: English. Toggle: EN / JP.
+- All external links open in a new tab (`target="_blank"` + `rel="noopener noreferrer"`).
+- No personal email addresses displayed on the page.
